@@ -1,0 +1,15 @@
+version: '3.11'
+
+services:
+  backend:
+    image: test-task
+    build:
+      context: src
+    volumes:
+      - ./src:/opt/backend/
+      - ./poetry.lock:/opt/poetry.lock
+      - ./pyproject.toml:/opt/pyproject.toml
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
