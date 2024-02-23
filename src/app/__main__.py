@@ -9,5 +9,5 @@ if __name__ == "__main__":
         host=settings.SERVER_HOST,
         port=settings.SERVER_PORT,
         reload=settings.RELOAD_ON_CHANGE,
-        workers=2
+        workers=2,
     )
