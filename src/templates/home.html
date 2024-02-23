@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Top Project</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text" name="repo_url" placeholder="Enter GitHub repository URL" required>
+        <button type="submit">Get Top Project</button>
+    </form>
+    {% if top_repo %}
+        <h2>Top 5 Projects:</h2>
+        <ul>
+            {% for repo in top_repo %}
+                <li><a href="https://github.com/{{repo.repository}}">{{ repo.repository}}</a>: {{repo.count}} common contributors </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

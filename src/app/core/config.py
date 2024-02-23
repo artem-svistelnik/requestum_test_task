@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     RELOAD_ON_CHANGE: bool = True
     BASE_URL: str = "http://0.0.0.0:8080"
     ROOT_PATH: str = ""
+    GITGUB_PERSONAL_TOKEN: str = ""
 
     @validator("BACKEND_CORS_ORIGINS", pre=True)
     def assemble_cors_origins(cls, v: str | list[str]) -> list[str] | str:  # noqa: N805
